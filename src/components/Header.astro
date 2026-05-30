@@ -1,0 +1,78 @@
+---
+---
+
+<header class="header">
+  <div class="container header-inner">
+    <a href="/" class="logo">
+      <span class="logo-icon">🐾</span>
+      <span class="logo-text">PetNatural</span>
+    </a>
+    <nav class="nav">
+      <a href="#beneficios">Benefícios</a>
+      <a href="#receitas">Receitas</a>
+      <a href="#depoimentos">Depoimentos</a>
+      <a href="#precos">Preços</a>
+    </nav>
+    <a href="#precos" class="btn btn-primary btn-sm">Quero Receitas</a>
+  </div>
+</header>
+
+<style>
+  .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--gray-100);
+    padding: 0.75rem 0;
+  }
+
+  .header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 800;
+    font-size: 1.25rem;
+    color: var(--green-700);
+  }
+
+  .logo-icon {
+    font-size: 1.5rem;
+  }
+
+  .nav {
+    display: flex;
+    gap: 2rem;
+  }
+
+  .nav a {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--gray-600);
+    transition: color 0.2s;
+  }
+
+  .nav a:hover {
+    color: var(--green-600);
+  }
+
+  .btn-sm {
+    padding: 0.625rem 1.25rem;
+    font-size: 0.9rem;
+  }
+
+  @media (max-width: 768px) {
+    .nav {
+      display: none;
+    }
+  }
+</style>

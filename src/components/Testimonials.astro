@@ -1,0 +1,158 @@
+---
+const testimonials = [
+  {
+    name: "Mariana Costa",
+    pet: "Dona, Golden Retriever",
+    avatar: "👩",
+    text: "A Dona estava com problemas de pele há meses. Depois de 3 semanas com as receitas naturais, a pelagem dela voltou a brilhar e ela está com muito mais energia!",
+    rating: 5
+  },
+  {
+    name: "Rafael Santos",
+    pet: "Thor, Labrador",
+    avatar: "👨",
+    text: "Eu achava que comida natural era complicado. Com esse guia, preparo tudo em 20 minutos. O Thor nunca comeu tão bem e o veterinário elogiou o peso ideal dele.",
+    rating: 5
+  },
+  {
+    name: "Camila Oliveira",
+    pet: "Luna, Gata Persa",
+    avatar: "👩",
+    text: "A Luna é super exigente com comida. As receitas de peixe foram um sucesso! Ela pede mais e eu sei que estou dando o melhor para ela.",
+    rating: 5
+  },
+  {
+    name: "Pedro Almeida",
+    pet: "Buddy, Poodle",
+    avatar: "👨",
+    text: "O Buddy tinha problemas digestivos. As receitas medicinais mudaram a vida dele. Não troco por nada! Melhor investimento que fiz.",
+    rating: 5
+  },
+  {
+    name: "Ana Paula",
+    pet: "Mel e Nina, SRD",
+    avatar: "👩",
+    text: "Tenho duas cachorras com necessidades diferentes. O guia tem receitas para cada situação. Ambas estão saudáveis e felizes!",
+    rating: 5
+  },
+  {
+    name: "Lucas Mendes",
+    pet: "Simba, Pastor Alemão",
+    avatar: "👨",
+    text: "Economizo muito dinheiro fazendo as receitas em casa. O Simba come melhor do que com rações super premium e gastei menos!",
+    rating: 5
+  }
+];
+---
+
+<section id="depoimentos" class="testimonials">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-badge">💬 Depoimentos</span>
+      <h2 class="section-title">O que nossos clientes dizem</h2>
+      <p class="section-subtitle">
+        Histórias reais de famílias que transformaram a alimentação dos seus pets.
+      </p>
+    </div>
+    <div class="testimonials-grid">
+      {testimonials.map((t) => (
+        <div class="testimonial-card">
+          <div class="stars">
+            {"★".repeat(t.rating)}
+          </div>
+          <p class="testimonial-text">"{t.text}"</p>
+          <div class="testimonial-author">
+            <span class="author-avatar">{t.avatar}</span>
+            <div>
+              <div class="author-name">{t.name}</div>
+              <div class="author-pet">{t.pet}</div>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .testimonials {
+    padding: 6rem 0;
+    background: white;
+  }
+
+  .section-header {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+
+  .testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+
+  .testimonial-card {
+    background: var(--gray-50);
+    border-radius: 1.25rem;
+    padding: 2rem;
+    border: 1px solid var(--gray-100);
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .testimonial-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.06);
+    border-color: var(--green-200);
+  }
+
+  .stars {
+    color: var(--amber-400);
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+    letter-spacing: 2px;
+  }
+
+  .testimonial-text {
+    font-size: 0.95rem;
+    color: var(--gray-600);
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+    flex: 1;
+  }
+
+  .testimonial-author {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .author-avatar {
+    width: 3rem;
+    height: 3rem;
+    background: var(--green-100);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+  }
+
+  .author-name {
+    font-weight: 700;
+    color: var(--gray-900);
+    font-size: 0.95rem;
+  }
+
+  .author-pet {
+    font-size: 0.8rem;
+    color: var(--gray-400);
+  }
+
+  @media (max-width: 768px) {
+    .testimonials-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

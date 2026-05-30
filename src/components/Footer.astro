@@ -1,0 +1,125 @@
+---
+---
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-cta">
+      <h2 class="footer-cta-title">Pronto para transformar a vida do seu pet?</h2>
+      <p class="footer-cta-subtitle">
+        Junte-se a mais de 2.500 famílias que já fazem a diferença na alimentação dos seus Pets.
+      </p>
+      <a href="#precos" class="btn btn-primary btn-lg">
+        🐾 Começar Agora
+      </a>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-brand">
+        <span class="logo-icon">🐾</span>
+        <span class="logo-text">PetNatural</span>
+      </div>
+      <div class="footer-links">
+        <a href="#">Termos de Uso</a>
+        <a href="#">Política de Privacidade</a>
+        <a href="#">Contato</a>
+      </div>
+      <p class="footer-copy">
+        &copy; 2025 PetNatural. Todos os direitos reservados.
+      </p>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    background: var(--gray-900);
+    color: white;
+    padding: 0;
+  }
+
+  .footer-cta {
+    text-align: center;
+    padding: 5rem 2rem;
+    background: linear-gradient(135deg, var(--green-800), var(--green-900));
+    border-radius: 0 0 2rem 2rem;
+  }
+
+  .footer-cta-title {
+    font-family: var(--font-serif);
+    font-size: clamp(1.75rem, 3vw, 2.5rem);
+    margin-bottom: 1rem;
+    color: white;
+  }
+
+  .footer-cta-subtitle {
+    font-size: 1.125rem;
+    color: var(--green-200);
+    margin-bottom: 2rem;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .footer-cta .btn-primary {
+    background: white;
+    color: var(--green-700);
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
+  }
+
+  .footer-cta .btn-primary:hover {
+    background: var(--green-50);
+  }
+
+  .footer-bottom {
+    padding: 2rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .footer-brand {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 800;
+    font-size: 1.125rem;
+    color: white;
+  }
+
+  .footer-links {
+    display: flex;
+    gap: 2rem;
+  }
+
+  .footer-links a {
+    font-size: 0.875rem;
+    color: var(--gray-400);
+    transition: color 0.2s;
+  }
+
+  .footer-links a:hover {
+    color: white;
+  }
+
+  .footer-copy {
+    width: 100%;
+    text-align: center;
+    font-size: 0.8rem;
+    color: var(--gray-500);
+    margin-top: 1rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--gray-800);
+  }
+
+  @media (max-width: 768px) {
+    .footer-bottom {
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .footer-links {
+      gap: 1rem;
+    }
+  }
+</style>

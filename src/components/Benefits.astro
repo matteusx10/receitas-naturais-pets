@@ -1,0 +1,119 @@
+---
+const benefits = [
+  {
+    icon: "🥗",
+    title: "Ingredientes Naturais",
+    description: "Todas as receitas usam ingredientes frescos e naturais, sem conservantes ou aditivos artificiais."
+  },
+  {
+    icon: "👨‍⚕️",
+    title: "Aprovado por Veterinários",
+    description: "Cada receita foi revisada e aprovada por uma equipe de 15+ veterinários nutricionistas."
+  },
+  {
+    icon: "⏱️",
+    title: "Fácil e Rápido",
+    description: "Receitas prontas em até 30 minutos, com passos simples que qualquer pessoa segue."
+  },
+  {
+    icon: "💰",
+    title: "Economia Garantida",
+    description: "Economize até 60% comparado com rações premium e alimentos industrializados para pets."
+  },
+  {
+    icon: "🐕",
+    title: "Para Todas as Raças",
+    description: "Receitas adaptáveis para cães e gatos de todos os tamanhos, idades e necessidades."
+  },
+  {
+    icon: "❤️",
+    title: "Saúde em Dia",
+    description: "Pelagem mais bonita, mais energia, melhor digestão e sistema imunológico fortalecido."
+  }
+];
+---
+
+<section id="beneficios" class="benefits">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-badge">🌿 Benefícios</span>
+      <h2 class="section-title">Por que escolher receitas naturais?</h2>
+      <p class="section-subtitle">
+        Seu pet merece o melhor. Veja como a alimentação natural pode transformar a vida do seu companheiro.
+      </p>
+    </div>
+    <div class="benefits-grid">
+      {benefits.map((benefit) => (
+        <div class="benefit-card">
+          <span class="benefit-icon">{benefit.icon}</span>
+          <h3 class="benefit-title">{benefit.title}</h3>
+          <p class="benefit-description">{benefit.description}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .benefits {
+    padding: 6rem 0;
+    background: white;
+  }
+
+  .section-header {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+
+  .benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+
+  .benefit-card {
+    padding: 2rem;
+    border-radius: 1.25rem;
+    background: var(--gray-50);
+    border: 1px solid var(--gray-100);
+    transition: all 0.3s ease;
+  }
+
+  .benefit-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
+    border-color: var(--green-200);
+    background: white;
+  }
+
+  .benefit-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 3.5rem;
+    height: 3.5rem;
+    background: var(--green-100);
+    border-radius: 1rem;
+    font-size: 1.75rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .benefit-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--gray-900);
+    margin-bottom: 0.75rem;
+  }
+
+  .benefit-description {
+    font-size: 0.95rem;
+    color: var(--gray-500);
+    line-height: 1.6;
+  }
+
+  @media (max-width: 768px) {
+    .benefits-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

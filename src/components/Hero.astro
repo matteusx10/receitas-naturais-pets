@@ -1,0 +1,312 @@
+---
+---
+
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="container hero-inner">
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span>🌿</span> +2.500 pets já transformados
+      </div>
+      <h1 class="hero-title">
+        Receitas <span class="highlight">Naturais</span> que seu Pet vai
+        <span class="highlight">Amar</span>
+      </h1>
+      <p class="hero-subtitle">
+        Descubra mais de 100 receitas saudáveis, testadas e aprovadas por
+        veterinários. Alimente seu melhor amigo com carinho e ciência.
+      </p>
+      <div class="hero-actions">
+        <a href="#precos" class="btn btn-primary btn-lg">
+          🐶 Quero Começar Agora
+        </a>
+        <a href="#receitas" class="btn btn-secondary btn-lg">
+          Ver Receitas
+        </a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat">
+          <span class="stat-number">100+</span>
+          <span class="stat-label">Receitas</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-number">15+</span>
+          <span class="stat-label">Veterinários</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-number">4.9</span>
+          <span class="stat-label">Avaliação ⭐</span>
+        </div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-card">
+        <div class="hero-emoji">🐕</div>
+        <div class="hero-card-content">
+          <div class="hero-card-title">Receita do Dia</div>
+          <div class="hero-card-recipe">Bowl de Frango com Abóbora e Quinoa</div>
+          <div class="hero-card-tags">
+            <span class="tag">Rico em Proteína</span>
+            <span class="tag">Sem Glúten</span>
+          </div>
+        </div>
+      </div>
+      <div class="floating-elements">
+        <span class="float float-1">🥕</span>
+        <span class="float float-2">🥩</span>
+        <span class="float float-3">🫐</span>
+        <span class="float float-4">🎃</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero {
+    position: relative;
+    padding: 8rem 0 4rem;
+    overflow: hidden;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+  }
+
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, var(--green-50) 0%, var(--warm-50) 50%, var(--amber-50) 100%);
+    z-index: -1;
+  }
+
+  .hero-bg::after {
+    content: '';
+    position: absolute;
+    bottom: -50%;
+    right: -20%;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(34, 197, 94, 0.08) 0%, transparent 70%);
+    border-radius: 50%;
+  }
+
+  .hero-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+  }
+
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    background: white;
+    border-radius: 2rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--green-700);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    margin-bottom: 1.5rem;
+    animation: fadeInUp 0.6s ease-out;
+  }
+
+  .hero-title {
+    font-family: var(--font-serif);
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    line-height: 1.1;
+    color: var(--gray-900);
+    margin-bottom: 1.5rem;
+    animation: fadeInUp 0.6s ease-out 0.1s both;
+  }
+
+  .highlight {
+    color: var(--green-600);
+    position: relative;
+  }
+
+  .highlight::after {
+    content: '';
+    position: absolute;
+    bottom: 2px;
+    left: 0;
+    right: 0;
+    height: 8px;
+    background: var(--green-200);
+    z-index: -1;
+    border-radius: 4px;
+  }
+
+  .hero-subtitle {
+    font-size: 1.25rem;
+    color: var(--gray-500);
+    line-height: 1.7;
+    margin-bottom: 2rem;
+    max-width: 500px;
+    animation: fadeInUp 0.6s ease-out 0.2s both;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2.5rem;
+    animation: fadeInUp 0.6s ease-out 0.3s both;
+  }
+
+  .btn-lg {
+    padding: 1.125rem 2rem;
+    font-size: 1.125rem;
+  }
+
+  .hero-stats {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    animation: fadeInUp 0.6s ease-out 0.4s both;
+  }
+
+  .stat-number {
+    display: block;
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--gray-900);
+  }
+
+  .stat-label {
+    font-size: 0.875rem;
+    color: var(--gray-400);
+  }
+
+  .stat-divider {
+    width: 1px;
+    height: 40px;
+    background: var(--gray-200);
+  }
+
+  .hero-visual {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    animation: fadeIn 0.8s ease-out 0.3s both;
+  }
+
+  .hero-card {
+    background: white;
+    border-radius: 1.5rem;
+    padding: 2rem;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+    max-width: 380px;
+    width: 100%;
+  }
+
+  .hero-emoji {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+
+  .hero-card-content {
+    text-align: center;
+  }
+
+  .hero-card-title {
+    font-size: 0.875rem;
+    color: var(--green-600);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.5rem;
+  }
+
+  .hero-card-recipe {
+    font-family: var(--font-serif);
+    font-size: 1.5rem;
+    color: var(--gray-900);
+    margin-bottom: 1rem;
+  }
+
+  .hero-card-tags {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+
+  .tag {
+    padding: 0.375rem 0.75rem;
+    background: var(--green-50);
+    color: var(--green-700);
+    border-radius: 2rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+  }
+
+  .floating-elements {
+    position: absolute;
+    inset: -2rem;
+    pointer-events: none;
+  }
+
+  .float {
+    position: absolute;
+    font-size: 2rem;
+    animation: float 3s ease-in-out infinite;
+  }
+
+  .float-1 { top: 10%; left: 0; animation-delay: 0s; }
+  .float-2 { top: 5%; right: 5%; animation-delay: 0.5s; }
+  .float-3 { bottom: 15%; left: 5%; animation-delay: 1s; }
+  .float-4 { bottom: 5%; right: 0; animation-delay: 1.5s; }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  @media (max-width: 768px) {
+    .hero {
+      padding: 6rem 0 3rem;
+      min-height: auto;
+    }
+
+    .hero-inner {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      text-align: center;
+    }
+
+    .hero-subtitle {
+      max-width: 100%;
+    }
+
+    .hero-actions {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .hero-stats {
+      justify-content: center;
+    }
+
+    .hero-visual {
+      display: none;
+    }
+  }
+</style>

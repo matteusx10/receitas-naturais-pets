@@ -1,0 +1,128 @@
+---
+const faqs = [
+  {
+    question: "As receitas são seguras para todos os pets?",
+    answer: "Sim! Todas as receitas foram desenvolvidas e revisadas por veterinários nutricionistas. Incluímos adapatações para diferentes porte, idade e condições de saúde. Recomendamos sempre consultar seu veterinário antes de mudar a alimentação do seu pet."
+  },
+  {
+    question: "Preciso de ingredientes difíceis de encontrar?",
+    answer: "Não! Todas as receitas usam ingredientes encontrados em supermercados comuns. Priorizamos acessibilidade e praticidade, sem abrir mão da qualidade nutricional."
+  },
+  {
+    question: "Quanto tempo leva para preparar as receitas?",
+    answer: "A maioria das receitas fica pronta entre 15 a 30 minutos. Temos também receitas de preparo antecipado que podem ser congeladas e usadas durante a semana."
+  },
+  {
+    question: "Posso usar as receitas para filhotes?",
+    answer: "Sim! Temos uma seção específica com receitas para filhotes, adaptadas para as necessidades nutricionais de cada fase da vida do seu pet."
+  },
+  {
+    question: "Como recebo o material?",
+    answer: "Imediatamente após a confirmação do pagamento, você recebe por e-mail o acesso completo ao material em PDF, podendo ler no celular, tablet ou computador."
+  },
+  {
+    question: "E se meu pet não gostar?",
+    answer: "Oferecemos garantia de 7 dias. Se seu pet não se adaptar ou você não ficar satisfeito por qualquer motivo, devolvemos 100% do valor investido."
+  }
+];
+---
+
+<section id="faq" class="faq">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-badge">❓ Dúvidas</span>
+      <h2 class="section-title">Perguntas Frequentes</h2>
+      <p class="section-subtitle">
+        Tire todas as suas dúvidas antes de começar.
+      </p>
+    </div>
+    <div class="faq-list">
+      {faqs.map((faq, index) => (
+        <details class="faq-item" open={index === 0}>
+          <summary class="faq-question">
+            <span>{faq.question}</span>
+            <span class="faq-icon">+</span>
+          </summary>
+          <div class="faq-answer">
+            <p>{faq.answer}</p>
+          </div>
+        </details>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .faq {
+    padding: 6rem 0;
+    background: white;
+  }
+
+  .section-header {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+
+  .faq-list {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .faq-item {
+    background: var(--gray-50);
+    border-radius: 1rem;
+    border: 1px solid var(--gray-100);
+    overflow: hidden;
+    transition: all 0.3s ease;
+  }
+
+  .faq-item:hover {
+    border-color: var(--green-200);
+  }
+
+  .faq-item[open] {
+    border-color: var(--green-300);
+    background: white;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+  }
+
+  .faq-question {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.25rem 1.5rem;
+    cursor: pointer;
+    font-weight: 600;
+    color: var(--gray-800);
+    font-size: 1.05rem;
+    list-style: none;
+  }
+
+  .faq-question::-webkit-details-marker {
+    display: none;
+  }
+
+  .faq-icon {
+    font-size: 1.5rem;
+    color: var(--green-500);
+    font-weight: 300;
+    transition: transform 0.3s ease;
+  }
+
+  .faq-item[open] .faq-icon {
+    transform: rotate(45deg);
+  }
+
+  .faq-answer {
+    padding: 0 1.5rem 1.25rem;
+  }
+
+  .faq-answer p {
+    color: var(--gray-500);
+    line-height: 1.7;
+    font-size: 0.95rem;
+  }
+</style>
