@@ -3,42 +3,42 @@ const testimonials = [
   {
     name: "Mariana Costa",
     pet: "Dona, Golden Retriever",
-    avatar: "👩",
+    avatar: "MC",
     text: "A Dona estava com problemas de pele há meses. Depois de 3 semanas com as receitas naturais, a pelagem dela voltou a brilhar e ela está com muito mais energia!",
     rating: 5
   },
   {
     name: "Rafael Santos",
     pet: "Thor, Labrador",
-    avatar: "👨",
+    avatar: "RS",
     text: "Eu achava que comida natural era complicado. Com esse guia, preparo tudo em 20 minutos. O Thor nunca comeu tão bem e o veterinário elogiou o peso ideal dele.",
     rating: 5
   },
   {
     name: "Camila Oliveira",
     pet: "Luna, Gata Persa",
-    avatar: "👩",
+    avatar: "CO",
     text: "A Luna é super exigente com comida. As receitas de peixe foram um sucesso! Ela pede mais e eu sei que estou dando o melhor para ela.",
     rating: 5
   },
   {
     name: "Pedro Almeida",
     pet: "Buddy, Poodle",
-    avatar: "👨",
+    avatar: "PA",
     text: "O Buddy tinha problemas digestivos. As receitas medicinais mudaram a vida dele. Não troco por nada! Melhor investimento que fiz.",
     rating: 5
   },
   {
     name: "Ana Paula",
     pet: "Mel e Nina, SRD",
-    avatar: "👩",
+    avatar: "AP",
     text: "Tenho duas cachorras com necessidades diferentes. O guia tem receitas para cada situação. Ambas estão saudáveis e felizes!",
     rating: 5
   },
   {
     name: "Lucas Mendes",
     pet: "Simba, Pastor Alemão",
-    avatar: "👨",
+    avatar: "LM",
     text: "Economizo muito dinheiro fazendo as receitas em casa. O Simba come melhor do que com rações super premium e gastei menos!",
     rating: 5
   }
@@ -47,27 +47,29 @@ const testimonials = [
 
 <section id="depoimentos" class="testimonials">
   <div class="container">
-    <div class="section-header">
-      <span class="section-badge">💬 Depoimentos</span>
-      <h2 class="section-title">O que nossos clientes dizem</h2>
+    <div class="section-header reveal">
+      <span class="section-badge">✦ Depoimentos</span>
+      <h2 class="section-title">O que nossos<br/><span class="gradient-text">clientes dizem</span></h2>
       <p class="section-subtitle">
         Histórias reais de famílias que transformaram a alimentação dos seus pets.
       </p>
     </div>
-    <div class="testimonials-grid">
+    <div class="testimonials-grid stagger reveal">
       {testimonials.map((t) => (
         <div class="testimonial-card">
+          <div class="testimonial-quote">"</div>
           <div class="stars">
             {"★".repeat(t.rating)}
           </div>
-          <p class="testimonial-text">"{t.text}"</p>
+          <p class="testimonial-text">{t.text}</p>
           <div class="testimonial-author">
-            <span class="author-avatar">{t.avatar}</span>
+            <div class="author-avatar">{t.avatar}</div>
             <div>
               <div class="author-name">{t.name}</div>
               <div class="author-pet">{t.pet}</div>
             </div>
           </div>
+          <div class="card-border"></div>
         </div>
       ))}
     </div>
@@ -76,8 +78,8 @@ const testimonials = [
 
 <style>
   .testimonials {
-    padding: 6rem 0;
-    background: white;
+    position: relative;
+    padding: 8rem 0;
   }
 
   .section-header {
@@ -88,36 +90,47 @@ const testimonials = [
   .testimonials-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 1.5rem;
+    gap: 1.25rem;
   }
 
   .testimonial-card {
-    background: var(--gray-50);
+    position: relative;
+    background: rgba(255, 255, 255, 0.02);
     border-radius: 1.25rem;
     padding: 2rem;
-    border: 1px solid var(--gray-100);
-    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
     display: flex;
     flex-direction: column;
+    overflow: hidden;
   }
 
   .testimonial-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.06);
-    border-color: var(--green-200);
+    transform: translateY(-6px);
+    background: rgba(255, 255, 255, 0.04);
+    border-color: rgba(34, 197, 94, 0.15);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+  }
+
+  .testimonial-quote {
+    font-family: var(--font-serif);
+    font-size: 4rem;
+    line-height: 1;
+    color: rgba(34, 197, 94, 0.2);
+    margin-bottom: -1rem;
   }
 
   .stars {
     color: var(--amber-400);
-    font-size: 1.25rem;
+    font-size: 1rem;
     margin-bottom: 1rem;
-    letter-spacing: 2px;
+    letter-spacing: 3px;
   }
 
   .testimonial-text {
-    font-size: 0.95rem;
-    color: var(--gray-600);
-    line-height: 1.7;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.55);
+    line-height: 1.8;
     margin-bottom: 1.5rem;
     flex: 1;
   }
@@ -126,28 +139,48 @@ const testimonials = [
     display: flex;
     align-items: center;
     gap: 0.75rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
   }
 
   .author-avatar {
-    width: 3rem;
-    height: 3rem;
-    background: var(--green-100);
-    border-radius: 50%;
+    width: 2.75rem;
+    height: 2.75rem;
+    background: linear-gradient(135deg, var(--green-400), var(--green-600));
+    border-radius: 0.75rem;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.5rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: white;
+    letter-spacing: 0.02em;
   }
 
   .author-name {
     font-weight: 700;
-    color: var(--gray-900);
-    font-size: 0.95rem;
+    color: white;
+    font-size: 0.9rem;
   }
 
   .author-pet {
-    font-size: 0.8rem;
-    color: var(--gray-400);
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.35);
+  }
+
+  .card-border {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--green-400), transparent);
+    opacity: 0;
+    transition: opacity 0.4s;
+  }
+
+  .testimonial-card:hover .card-border {
+    opacity: 0.5;
   }
 
   @media (max-width: 768px) {

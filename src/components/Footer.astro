@@ -2,20 +2,28 @@
 ---
 
 <footer class="footer">
-  <div class="container">
-    <div class="footer-cta">
-      <h2 class="footer-cta-title">Pronto para transformar a vida do seu pet?</h2>
-      <p class="footer-cta-subtitle">
-        Junte-se a mais de 2.500 famílias que já fazem a diferença na alimentação dos seus Pets.
-      </p>
-      <a href="#precos" class="btn btn-primary btn-lg">
-        🐾 Começar Agora
-      </a>
+  <div class="footer-cta-section">
+    <div class="footer-bg">
+      <div class="footer-orb" data-parallax="-0.1"></div>
     </div>
-    <div class="footer-bottom">
+    <div class="container">
+      <div class="footer-cta reveal">
+        <div class="cta-badge">🐾 Pronto para começar?</div>
+        <h2 class="footer-cta-title">Transforme a vida do<br/><span class="gradient-text">seu pet hoje</span></h2>
+        <p class="footer-cta-subtitle">
+          Junte-se a mais de 2.500 famílias que já fazem a diferença na alimentação dos seus Pets.
+        </p>
+        <a href="#precos" class="btn btn-primary btn-lg glow">
+          <span>🐶 Começar Agora</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <div class="container footer-bottom-inner">
       <div class="footer-brand">
-        <span class="logo-icon">🐾</span>
-        <span class="logo-text">NaturalPet</span>
+        <span class="logo-text">Natural<span class="logo-highlight">Pet</span></span>
       </div>
       <div class="footer-links">
         <a href="#">Termos de Uso</a>
@@ -31,46 +39,75 @@
 
 <style>
   .footer {
-    background: var(--gray-900);
-    color: white;
-    padding: 0;
+    position: relative;
+  }
+
+  .footer-cta-section {
+    position: relative;
+    padding: 6rem 0;
+    overflow: hidden;
+  }
+
+  .footer-bg {
+    position: absolute;
+    inset: 0;
+  }
+
+  .footer-orb {
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(34, 197, 94, 0.1), transparent 70%);
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    filter: blur(80px);
   }
 
   .footer-cta {
     text-align: center;
-    padding: 5rem 2rem;
-    background: linear-gradient(135deg, var(--green-800), var(--green-900));
-    border-radius: 0 0 2rem 2rem;
+    position: relative;
+    z-index: 2;
+  }
+
+  .cta-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1.25rem;
+    background: rgba(34, 197, 94, 0.1);
+    border: 1px solid rgba(34, 197, 94, 0.15);
+    border-radius: 2rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--green-400);
+    margin-bottom: 1.5rem;
   }
 
   .footer-cta-title {
     font-family: var(--font-serif);
-    font-size: clamp(1.75rem, 3vw, 2.5rem);
+    font-size: clamp(2rem, 4vw, 3rem);
     margin-bottom: 1rem;
     color: white;
+    line-height: 1.2;
   }
 
   .footer-cta-subtitle {
     font-size: 1.125rem;
-    color: var(--green-200);
-    margin-bottom: 2rem;
+    color: rgba(255, 255, 255, 0.45);
+    margin-bottom: 2.5rem;
     max-width: 500px;
     margin-left: auto;
     margin-right: auto;
   }
 
-  .footer-cta .btn-primary {
-    background: white;
-    color: var(--green-700);
-    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
-  }
-
-  .footer-cta .btn-primary:hover {
-    background: var(--green-50);
-  }
-
   .footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
     padding: 2rem 0;
+  }
+
+  .footer-bottom-inner {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -78,13 +115,14 @@
     gap: 1rem;
   }
 
-  .footer-brand {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
+  .footer-brand .logo-text {
     font-weight: 800;
-    font-size: 1.125rem;
+    font-size: 1.25rem;
     color: white;
+  }
+
+  .footer-brand .logo-highlight {
+    color: var(--green-400);
   }
 
   .footer-links {
@@ -93,9 +131,9 @@
   }
 
   .footer-links a {
-    font-size: 0.875rem;
-    color: var(--gray-400);
-    transition: color 0.2s;
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.35);
+    transition: color 0.3s;
   }
 
   .footer-links a:hover {
@@ -106,14 +144,14 @@
     width: 100%;
     text-align: center;
     font-size: 0.8rem;
-    color: var(--gray-500);
+    color: rgba(255, 255, 255, 0.2);
     margin-top: 1rem;
     padding-top: 1.5rem;
-    border-top: 1px solid var(--gray-800);
+    border-top: 1px solid rgba(255, 255, 255, 0.04);
   }
 
   @media (max-width: 768px) {
-    .footer-bottom {
+    .footer-bottom-inner {
       flex-direction: column;
       text-align: center;
     }

@@ -1,0 +1,58 @@
+---
+const items = [
+  "🌿 100% Natural",
+  " Veterinário Aprovado",
+  " Sem Conservantes",
+  " Para Cães e Gatos",
+  " Receitas Fáceis",
+  " Economia Garantida",
+  " Acesso Vitalício",
+  " Garantia 7 Dias"
+];
+---
+
+<div class="marquee-section">
+  <div class="marquee-track">
+    <div class="marquee-content">
+      {[...items, ...items, ...items].map((item) => (
+        <span class="marquee-item">{item}</span>
+      ))}
+    </div>
+  </div>
+</div>
+
+<style>
+  .marquee-section {
+    padding: 1.5rem 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.04);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.01);
+  }
+
+  .marquee-track {
+    display: flex;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .marquee-content {
+    display: flex;
+    gap: 3rem;
+    animation: marquee 30s linear infinite;
+    white-space: nowrap;
+  }
+
+  .marquee-item {
+    font-size: 1rem;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.3);
+    letter-spacing: 0.02em;
+    flex-shrink: 0;
+  }
+
+  @keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-33.333%); }
+  }
+</style>

@@ -2,96 +2,170 @@
 ---
 
 <section class="hero">
-  <div class="hero-bg"></div>
+  <!-- Animated background -->
+  <div class="hero-bg">
+    <div class="orb orb-1" data-parallax="-0.15"></div>
+    <div class="orb orb-2" data-parallax="-0.1"></div>
+    <div class="orb orb-3" data-parallax="-0.2"></div>
+    <div class="grid-lines"></div>
+    <div class="radial-fade"></div>
+  </div>
+
   <div class="container hero-inner">
     <div class="hero-content">
-      <div class="hero-badge">
-        <span>🌿</span> +2.500 pets já transformados
+      <div class="hero-badge reveal">
+        <span class="badge-dot"></span>
+        +2.500 pets já transformados
       </div>
-      <h1 class="hero-title">
-        Receitas <span class="highlight">Naturais</span> que seu Pet vai
-        <span class="highlight">Amar</span>
+      <h1 class="hero-title reveal" style="transition-delay: 100ms">
+        Receitas <span class="gradient-text">Naturais</span><br />
+        que seu Pet vai <span class="gradient-text">Amar</span>
       </h1>
-      <p class="hero-subtitle">
+      <p class="hero-subtitle reveal" style="transition-delay: 200ms">
         Descubra mais de 100 receitas saudáveis, testadas e aprovadas por
         veterinários. Alimente seu melhor amigo com carinho e ciência.
       </p>
-      <div class="hero-actions">
-        <a href="#precos" class="btn btn-primary btn-lg">
-          🐶 Quero Começar Agora
+      <div class="hero-actions reveal" style="transition-delay: 300ms">
+        <a href="#precos" class="btn btn-primary btn-lg glow">
+          <span>🐶 Quero Começar Agora</span>
         </a>
         <a href="#receitas" class="btn btn-secondary btn-lg">
-          Ver Receitas
+          <span>Ver Receitas</span>
         </a>
       </div>
-      <div class="hero-stats">
+      <div class="hero-stats reveal" style="transition-delay: 400ms">
         <div class="stat">
-          <span class="stat-number">100+</span>
+          <span class="stat-number" data-count="100" data-suffix="+">0</span>
           <span class="stat-label">Receitas</span>
         </div>
         <div class="stat-divider"></div>
         <div class="stat">
-          <span class="stat-number">15+</span>
+          <span class="stat-number" data-count="15" data-suffix="+">0</span>
           <span class="stat-label">Veterinários</span>
         </div>
         <div class="stat-divider"></div>
         <div class="stat">
-          <span class="stat-number">4.9</span>
-          <span class="stat-label">Avaliação ⭐</span>
+          <span class="stat-number" data-count="2500" data-suffix="+">0</span>
+          <span class="stat-label">Pets Felizes</span>
         </div>
       </div>
     </div>
-    <div class="hero-visual">
-      <div class="hero-card">
-        <div class="hero-emoji">🐕</div>
-        <div class="hero-card-content">
-          <div class="hero-card-title">Receita do Dia</div>
-          <div class="hero-card-recipe">Bowl de Frango com Abóbora e Quinoa</div>
-          <div class="hero-card-tags">
+
+    <div class="hero-visual reveal-scale" style="transition-delay: 300ms">
+      <div class="card-3d">
+        <div class="card-glow"></div>
+        <div class="hero-card">
+          <div class="card-header">
+            <div class="card-dots">
+              <span></span><span></span><span></span>
+            </div>
+            <span class="card-tag">Receita do Dia</span>
+          </div>
+          <div class="card-emoji">🐕</div>
+          <div class="card-title">Bowl de Frango com<br/>Abóbora e Quinoa</div>
+          <div class="card-tags">
             <span class="tag">Rico em Proteína</span>
             <span class="tag">Sem Glúten</span>
+            <span class="tag">Natural</span>
+          </div>
+          <div class="card-divider"></div>
+          <div class="card-footer">
+            <div class="card-info">
+              <span>⏱ 25 min</span>
+              <span>📊 Fácil</span>
+            </div>
+            <button class="card-btn">Ver Receita →</button>
           </div>
         </div>
       </div>
-      <div class="floating-elements">
-        <span class="float float-1">🥕</span>
-        <span class="float float-2">🥩</span>
-        <span class="float float-3">🫐</span>
-        <span class="float float-4">🎃</span>
+
+      <div class="floating-emojis">
+        <span class="f-emoji" style="--delay: 0s; --x: -60px; --y: -40px; --dur: 4s">🥕</span>
+        <span class="f-emoji" style="--delay: 0.5s; --x: 80px; --y: -60px; --dur: 3.5s">🥩</span>
+        <span class="f-emoji" style="--delay: 1s; --x: -80px; --y: 60px; --dur: 5s">🫐</span>
+        <span class="f-emoji" style="--delay: 1.5s; --x: 70px; --y: 50px; --dur: 4.5s">🎃</span>
+        <span class="f-emoji" style="--delay: 2s; --x: -30px; --y: -80px; --dur: 3.8s">🌿</span>
+        <span class="f-emoji" style="--delay: 0.8s; --x: 50px; --y: -20px; --dur: 4.2s">🍗</span>
       </div>
     </div>
+  </div>
+
+  <div class="hero-scroll-indicator">
+    <div class="scroll-line"></div>
+    <span>Scroll</span>
   </div>
 </section>
 
 <style>
   .hero {
     position: relative;
-    padding: 8rem 0 4rem;
-    overflow: hidden;
     min-height: 100vh;
     display: flex;
     align-items: center;
+    padding: 8rem 0 4rem;
+    overflow: hidden;
   }
 
   .hero-bg {
     position: absolute;
     inset: 0;
-    background: linear-gradient(135deg, var(--green-50) 0%, var(--warm-50) 50%, var(--amber-50) 100%);
-    z-index: -1;
+    overflow: hidden;
   }
 
-  .hero-bg::after {
-    content: '';
+  .orb {
     position: absolute;
-    bottom: -50%;
-    right: -20%;
+    border-radius: 50%;
+    filter: blur(80px);
+    animation: floatSlow 8s ease-in-out infinite;
+  }
+
+  .orb-1 {
     width: 600px;
     height: 600px;
-    background: radial-gradient(circle, rgba(34, 197, 94, 0.08) 0%, transparent 70%);
-    border-radius: 50%;
+    background: radial-gradient(circle, rgba(34, 197, 94, 0.15), transparent 70%);
+    top: -200px;
+    right: -100px;
+    animation-delay: 0s;
+  }
+
+  .orb-2 {
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(251, 191, 36, 0.1), transparent 70%);
+    bottom: -100px;
+    left: -100px;
+    animation-delay: 2s;
+  }
+
+  .orb-3 {
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(34, 197, 94, 0.08), transparent 70%);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation-delay: 4s;
+  }
+
+  .grid-lines {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.015) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.015) 1px, transparent 1px);
+    background-size: 80px 80px;
+    mask-image: radial-gradient(ellipse 80% 60% at 50% 40%, black, transparent);
+  }
+
+  .radial-fade {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 80% 80% at 50% 30%, transparent 30%, #0a0a0a 100%);
   }
 
   .hero-inner {
+    position: relative;
+    z-index: 2;
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 4rem;
@@ -101,183 +175,291 @@
   .hero-badge {
     display: inline-flex;
     align-items: center;
-    gap: 0.5rem;
-    padding: 0.5rem 1rem;
-    background: white;
+    gap: 0.75rem;
+    padding: 0.625rem 1.25rem;
+    background: rgba(34, 197, 94, 0.08);
+    border: 1px solid rgba(34, 197, 94, 0.15);
     border-radius: 2rem;
     font-size: 0.875rem;
     font-weight: 600;
-    color: var(--green-700);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
-    margin-bottom: 1.5rem;
-    animation: fadeInUp 0.6s ease-out;
+    color: var(--green-400);
+    margin-bottom: 2rem;
+    backdrop-filter: blur(10px);
+  }
+
+  .badge-dot {
+    width: 8px;
+    height: 8px;
+    background: var(--green-400);
+    border-radius: 50%;
+    animation: pulseGlow 2s ease-in-out infinite;
   }
 
   .hero-title {
     font-family: var(--font-serif);
-    font-size: clamp(2.5rem, 5vw, 4rem);
-    line-height: 1.1;
-    color: var(--gray-900);
+    font-size: clamp(3rem, 5.5vw, 4.5rem);
+    line-height: 1.08;
+    color: white;
     margin-bottom: 1.5rem;
-    animation: fadeInUp 0.6s ease-out 0.1s both;
-  }
-
-  .highlight {
-    color: var(--green-600);
-    position: relative;
-  }
-
-  .highlight::after {
-    content: '';
-    position: absolute;
-    bottom: 2px;
-    left: 0;
-    right: 0;
-    height: 8px;
-    background: var(--green-200);
-    z-index: -1;
-    border-radius: 4px;
+    letter-spacing: -0.02em;
   }
 
   .hero-subtitle {
-    font-size: 1.25rem;
-    color: var(--gray-500);
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.5);
     line-height: 1.7;
-    margin-bottom: 2rem;
-    max-width: 500px;
-    animation: fadeInUp 0.6s ease-out 0.2s both;
+    margin-bottom: 2.5rem;
+    max-width: 480px;
   }
 
   .hero-actions {
     display: flex;
     gap: 1rem;
-    margin-bottom: 2.5rem;
-    animation: fadeInUp 0.6s ease-out 0.3s both;
-  }
-
-  .btn-lg {
-    padding: 1.125rem 2rem;
-    font-size: 1.125rem;
+    margin-bottom: 3rem;
   }
 
   .hero-stats {
     display: flex;
     align-items: center;
-    gap: 1.5rem;
-    animation: fadeInUp 0.6s ease-out 0.4s both;
+    gap: 2rem;
+    padding: 1.5rem 2rem;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 1.25rem;
+    backdrop-filter: blur(10px);
+    max-width: fit-content;
   }
 
   .stat-number {
     display: block;
-    font-size: 1.5rem;
+    font-size: 2rem;
     font-weight: 800;
-    color: var(--gray-900);
+    color: white;
+    letter-spacing: -0.02em;
   }
 
   .stat-label {
-    font-size: 0.875rem;
-    color: var(--gray-400);
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.4);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-weight: 500;
   }
 
   .stat-divider {
     width: 1px;
-    height: 40px;
-    background: var(--gray-200);
+    height: 48px;
+    background: rgba(255, 255, 255, 0.08);
   }
 
+  /* 3D Card */
   .hero-visual {
     position: relative;
     display: flex;
     justify-content: center;
-    animation: fadeIn 0.8s ease-out 0.3s both;
+    perspective: 1000px;
+  }
+
+  .card-3d {
+    position: relative;
+    transform-style: preserve-3d;
+    animation: cardFloat 6s ease-in-out infinite;
+  }
+
+  @keyframes cardFloat {
+    0%, 100% { transform: translateY(0) rotateX(0) rotateY(0); }
+    25% { transform: translateY(-10px) rotateX(2deg) rotateY(-2deg); }
+    50% { transform: translateY(-5px) rotateX(-1deg) rotateY(1deg); }
+    75% { transform: translateY(-12px) rotateX(1deg) rotateY(-1deg); }
+  }
+
+  .card-glow {
+    position: absolute;
+    inset: -2px;
+    background: linear-gradient(135deg, var(--green-400), var(--amber-400), var(--green-400));
+    border-radius: 1.75rem;
+    opacity: 0.5;
+    filter: blur(20px);
+    animation: glowPulse 3s ease-in-out infinite;
+    background-size: 200% 200%;
+    animation: glowPulse 3s ease-in-out infinite, gradientShift 4s ease-in-out infinite;
+  }
+
+  @keyframes glowPulse {
+    0%, 100% { opacity: 0.3; }
+    50% { opacity: 0.6; }
   }
 
   .hero-card {
-    background: white;
+    position: relative;
+    background: rgba(20, 20, 20, 0.9);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 1.5rem;
     padding: 2rem;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
-    max-width: 380px;
-    width: 100%;
+    width: 380px;
+    backdrop-filter: blur(20px);
+    z-index: 1;
   }
 
-  .hero-emoji {
-    font-size: 4rem;
-    margin-bottom: 1rem;
-    text-align: center;
+  .card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
   }
 
-  .hero-card-content {
-    text-align: center;
+  .card-dots {
+    display: flex;
+    gap: 6px;
   }
 
-  .hero-card-title {
-    font-size: 0.875rem;
-    color: var(--green-600);
+  .card-dots span {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.15);
+  }
+
+  .card-dots span:first-child { background: #ff5f57; }
+  .card-dots span:nth-child(2) { background: #ffbd2e; }
+  .card-dots span:nth-child(3) { background: #28c840; }
+
+  .card-tag {
+    padding: 0.25rem 0.75rem;
+    background: rgba(34, 197, 94, 0.15);
+    color: var(--green-400);
+    border-radius: 2rem;
+    font-size: 0.7rem;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.05em;
-    margin-bottom: 0.5rem;
   }
 
-  .hero-card-recipe {
+  .card-emoji {
+    font-size: 4rem;
+    text-align: center;
+    margin-bottom: 1rem;
+    filter: drop-shadow(0 4px 20px rgba(0,0,0,0.3));
+    animation: float 4s ease-in-out infinite;
+  }
+
+  .card-title {
     font-family: var(--font-serif);
     font-size: 1.5rem;
-    color: var(--gray-900);
-    margin-bottom: 1rem;
+    color: white;
+    text-align: center;
+    margin-bottom: 1.25rem;
+    line-height: 1.3;
   }
 
-  .hero-card-tags {
+  .card-tags {
     display: flex;
     justify-content: center;
     gap: 0.5rem;
+    flex-wrap: wrap;
+    margin-bottom: 1.5rem;
   }
 
   .tag {
-    padding: 0.375rem 0.75rem;
-    background: var(--green-50);
-    color: var(--green-700);
+    padding: 0.375rem 0.875rem;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 2rem;
     font-size: 0.75rem;
-    font-weight: 600;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.7);
   }
 
-  .floating-elements {
+  .card-divider {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+    margin-bottom: 1.25rem;
+  }
+
+  .card-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .card-info {
+    display: flex;
+    gap: 1rem;
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.4);
+  }
+
+  .card-btn {
+    padding: 0.5rem 1rem;
+    background: linear-gradient(135deg, var(--green-400), var(--green-600));
+    color: white;
+    border: none;
+    border-radius: 0.75rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+
+  .card-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 16px rgba(34, 197, 94, 0.4);
+  }
+
+  /* Floating emojis */
+  .floating-emojis {
     position: absolute;
-    inset: -2rem;
+    inset: -40px;
     pointer-events: none;
   }
 
-  .float {
+  .f-emoji {
     position: absolute;
     font-size: 2rem;
-    animation: float 3s ease-in-out infinite;
+    top: 50%;
+    left: 50%;
+    transform: translate(var(--x), var(--y));
+    animation: emojiFloat var(--dur) ease-in-out infinite;
+    animation-delay: var(--delay);
+    opacity: 0.6;
   }
 
-  .float-1 { top: 10%; left: 0; animation-delay: 0s; }
-  .float-2 { top: 5%; right: 5%; animation-delay: 0.5s; }
-  .float-3 { bottom: 15%; left: 5%; animation-delay: 1s; }
-  .float-4 { bottom: 5%; right: 0; animation-delay: 1.5s; }
-
-  @keyframes float {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-15px); }
+  @keyframes emojiFloat {
+    0%, 100% { transform: translate(var(--x), var(--y)) scale(1); opacity: 0.6; }
+    50% { transform: translate(calc(var(--x) + 15px), calc(var(--y) - 20px)) scale(1.1); opacity: 0.9; }
   }
 
-  @keyframes fadeInUp {
-    from {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
+  /* Scroll indicator */
+  .hero-scroll-indicator {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+    animation: fadeIn 1s ease-out 1s both;
   }
 
-  @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+  .scroll-line {
+    width: 1px;
+    height: 40px;
+    background: linear-gradient(to bottom, rgba(255,255,255,0.3), transparent);
+    animation: scrollPulse 2s ease-in-out infinite;
+  }
+
+  @keyframes scrollPulse {
+    0%, 100% { opacity: 0.3; transform: scaleY(0.6); }
+    50% { opacity: 1; transform: scaleY(1); }
+  }
+
+  .hero-scroll-indicator span {
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: rgba(255, 255, 255, 0.3);
+    font-weight: 500;
   }
 
   @media (max-width: 768px) {
@@ -288,7 +470,7 @@
 
     .hero-inner {
       grid-template-columns: 1fr;
-      gap: 2rem;
+      gap: 3rem;
       text-align: center;
     }
 
@@ -302,10 +484,14 @@
     }
 
     .hero-stats {
-      justify-content: center;
+      margin: 0 auto;
     }
 
     .hero-visual {
+      display: none;
+    }
+
+    .hero-scroll-indicator {
       display: none;
     }
   }

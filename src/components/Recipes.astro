@@ -4,41 +4,49 @@ const categories = [
     emoji: "🍗",
     title: "Receitas com Carne",
     count: 35,
+    color: "#ef4444",
     items: ["Frango com Abóbora", "Carne com Batata Doce", "Peixe com Legumes"]
   },
   {
     emoji: "🥬",
     title: "Receitas Vegetarianas",
     count: 20,
+    color: "#22c55e",
     items: ["Arcesso de Lentilha", "Bowl Vegano", "Mix de Grãos"]
   },
   {
     emoji: "🎂",
     title: "Petiscos & Biscoitos",
     count: 25,
+    color: "#f59e0b",
     items: ["Biscoito de Amendoim", "Frozen de Banana", "Jerky Natural"]
   },
   {
     emoji: "💊",
     title: "Receitas Medicinais",
     count: 20,
+    color: "#8b5cf6",
     items: ["Para Digestão", "Para Pelagem", "Para Articulações"]
   }
 ];
 ---
 
 <section id="receitas" class="recipes">
+  <div class="recipes-bg">
+    <div class="recipes-gradient"></div>
+  </div>
   <div class="container">
-    <div class="section-header">
+    <div class="section-header reveal">
       <span class="section-badge">📖 Receitas</span>
-      <h2 class="section-title">Mais de 100 receitas para explorar</h2>
+      <h2 class="section-title">Mais de 100 receitas<br/><span class="gradient-text">para explorar</span></h2>
       <p class="section-subtitle">
         Categorias variadas para atender todas as necessidades do seu pet, desde o dia a dia até situações especiais.
       </p>
     </div>
-    <div class="recipes-grid">
+    <div class="recipes-grid stagger reveal">
       {categories.map((cat) => (
-        <div class="recipe-card">
+        <div class="recipe-card" style={`--accent: ${cat.color}`}>
+          <div class="recipe-glow"></div>
           <div class="recipe-header">
             <span class="recipe-emoji">{cat.emoji}</span>
             <span class="recipe-count">{cat.count} receitas</span>
@@ -47,16 +55,18 @@ const categories = [
           <ul class="recipe-list">
             {cat.items.map((item) => (
               <li>
-                <span class="check">✓</span>
+                <span class="check">→</span>
                 {item}
               </li>
             ))}
           </ul>
           <div class="recipe-more">+ muitas outras</div>
+          <div class="recipe-line"></div>
         </div>
       ))}
     </div>
-    <div class="recipes-cta">
+    <div class="recipes-cta reveal">
+      <div class="cta-icon">📋</div>
       <p>Todas as receitas incluem lista de ingredientes, modo de preparo, porções e informações nutricionais.</p>
     </div>
   </div>
@@ -64,51 +74,86 @@ const categories = [
 
 <style>
   .recipes {
-    padding: 6rem 0;
-    background: linear-gradient(180deg, var(--warm-50) 0%, white 100%);
+    position: relative;
+    padding: 8rem 0;
+    overflow: hidden;
+  }
+
+  .recipes-bg {
+    position: absolute;
+    inset: 0;
+  }
+
+  .recipes-gradient {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, #0a0a0a 0%, rgba(10, 10, 10, 0.95) 50%, #0a0a0a 100%);
   }
 
   .section-header {
     text-align: center;
     margin-bottom: 4rem;
+    position: relative;
+    z-index: 2;
   }
 
   .recipes-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 1.5rem;
+    gap: 1.25rem;
     margin-bottom: 3rem;
+    position: relative;
+    z-index: 2;
   }
 
   .recipe-card {
-    background: white;
+    position: relative;
+    background: rgba(255, 255, 255, 0.02);
     border-radius: 1.25rem;
     padding: 2rem;
-    border: 1px solid var(--gray-100);
-    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    overflow: hidden;
   }
 
   .recipe-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.08);
-    border-color: var(--green-200);
+    transform: translateY(-8px);
+    border-color: rgba(255, 255, 255, 0.12);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  }
+
+  .recipe-glow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--accent), transparent);
+    opacity: 0;
+    transition: opacity 0.4s;
+  }
+
+  .recipe-card:hover .recipe-glow {
+    opacity: 1;
   }
 
   .recipe-header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: 1rem;
+    margin-bottom: 1.25rem;
   }
 
   .recipe-emoji {
     font-size: 2.5rem;
+    filter: drop-shadow(0 4px 12px rgba(0,0,0,0.3));
   }
 
   .recipe-count {
-    padding: 0.375rem 0.75rem;
-    background: var(--green-100);
-    color: var(--green-700);
+    padding: 0.375rem 0.875rem;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    color: rgba(255, 255, 255, 0.6);
     border-radius: 2rem;
     font-size: 0.75rem;
     font-weight: 600;
@@ -117,7 +162,7 @@ const categories = [
   .recipe-title {
     font-size: 1.125rem;
     font-weight: 700;
-    color: var(--gray-900);
+    color: white;
     margin-bottom: 1rem;
   }
 
@@ -132,32 +177,57 @@ const categories = [
   .recipe-list li {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
-    font-size: 0.9rem;
-    color: var(--gray-600);
+    gap: 0.75rem;
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.5);
+    transition: color 0.3s;
+  }
+
+  .recipe-card:hover .recipe-list li {
+    color: rgba(255, 255, 255, 0.7);
   }
 
   .check {
-    color: var(--green-500);
+    color: var(--accent);
     font-weight: 700;
+    font-size: 0.9rem;
   }
 
   .recipe-more {
-    font-size: 0.8rem;
-    color: var(--gray-400);
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.3);
     font-style: italic;
+  }
+
+  .recipe-line {
+    position: absolute;
+    bottom: 0;
+    left: 2rem;
+    right: 2rem;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.06), transparent);
   }
 
   .recipes-cta {
     text-align: center;
     padding: 2rem;
-    background: var(--green-50);
-    border-radius: 1rem;
-    border: 1px solid var(--green-100);
+    background: rgba(34, 197, 94, 0.05);
+    border: 1px solid rgba(34, 197, 94, 0.1);
+    border-radius: 1.25rem;
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .cta-icon {
+    font-size: 1.5rem;
   }
 
   .recipes-cta p {
-    color: var(--green-700);
+    color: rgba(255, 255, 255, 0.6);
     font-weight: 500;
   }
 
